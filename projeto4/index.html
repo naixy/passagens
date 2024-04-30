@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja-Turismo</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: gray;
+            position: relative; /* Necessário para que os elementos filhos possam ser posicionados relativamente a este */
+        }
+
+        .comprar1 {
+            position: absolute;
+            top: 330px;
+            left: 150px;
+            height: 30px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 70%;
+            background: rgb(4, 174, 180);
+            color: black;
+        }
+
+        .comprar1:active {
+            transform: translateY(5px);
+        }
+
+        .comprar2 {
+            position: absolute;
+            top: 330px;
+            left: 500px;
+            height: 30px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 70%;
+            background: rgb(4, 174, 180);
+            color: black;
+        }
+
+        .comprar2:active {
+            transform: translateY(5px);
+        }
+
+        .place1 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 300px;
+            width: 200px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(5, 5, 109);
+        }
+
+        .custom-emoji {
+            position: absolute;
+            color: white;
+            font-size: 100px;
+            top: 150px;
+            left: 150px;
+            height: 100px;
+            width: 100px;
+            border: none;
+            border-radius: 0;
+        }
+
+        .selecao1 {
+            display: none;
+        }
+
+        .onselecao {
+            display: flex;
+        }
+
+        .selection {
+            position: absolute;
+            top: 150px;
+            left: 250px;
+            height: 400px;
+            width: 500px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(122, 8, 8);
+        }
+
+        .car-shop {
+            position: absolute;
+            top: 10px;
+            left: 875px;
+            font-size: 50px;
+            border: none;
+            border-radius: none;
+            background: none;
+            color: red;
+            cursor: pointer;
+        }
+
+        .car-shop:active {
+            transform: translateY(5px);
+        }
+
+        .place2 {
+            position: absolute;
+            top: 100px;
+            left: 450px;
+            height: 300px;
+            width: 200px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(5, 5, 109);
+        }
+
+        .hotel1 {
+            position: absolute;
+            top: 150px;
+            left: 500px;
+            font-size: 80px;
+
+        }
+
+        .selecao2 {
+            display: none;
+        }
+
+        .onselecao1 {
+            display: flex;
+        }
+
+        .comprarPassagem {
+            position: absolute;
+            top: 475px;
+            left: 425px;
+            height: 50px;
+            width: 150px;
+            cursor: pointer;
+            border: 3px;
+            border-color: rgb(4, 4, 110);
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        .comprarPassagem:active {
+            transform: translateY(5px);
+        }
+
+        .chosee {
+            position: absolute;
+            top: 250px;
+            left: 300px;
+            background: none;
+            font-size: 50px;
+            color: white;
+        }
+
+        .Selecione {
+            position: absolute;
+            top: 350px;
+            left: 450px;
+            background: white;
+            font-size: 20px;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .Selecione:active {
+            transform: translateY(5px);
+        }
+
+        .listaPassagem {
+            position: absolute;
+            top: 400px;
+            left: 450px;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .carrinho {
+            display: none;
+            position: absolute;
+            top: 150px;
+            left: 250px;
+            height: 400px;
+            width: 500px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(122, 8, 8);
+        }
+
+        .okay {
+            position: absolute;
+            top: 300px;
+            left: 175px;
+            height: 50px;
+            width: 150px;
+            cursor: pointer;
+            border: 3px;
+            border-color: rgb(4, 4, 110);
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        .okay:active {
+            transform: translateY(5px);
+        }
+
+        .carrinhoList {
+            position: absolute;
+            top: 75px;
+            left: 100px;
+            height: 200px;
+            width: 300px;
+            border: none;
+            border-radius: 10px;
+            font-size: 50px;
+            background-color: gray;
+        }
+
+        .invisible {    
+            display: none;
+        }
+
+        .chosee1 {
+            position: absolute;
+            top: 250px;
+            left: 325px;
+            background: none;
+            font-size: 50px;
+            color: white;
+        }
+
+        .comprarHotel {
+            position: absolute;
+            top: 475px;
+            left: 425px;
+            height: 50px;
+            width: 150px;
+            cursor: pointer;
+            border: 3px;
+            border-color: rgb(4, 4, 110);
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        .comprarHotel:active {
+            transform: translateY(5px);
+        }
+
+        .ListaHotel {
+            position: absolute;
+            top: 400px;
+            left: 450px;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .Selecione2 {
+            position: absolute;
+            top: 350px;
+            left: 450px;
+            background: white;
+            font-size: 20px;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .Selecione2:active {
+            transform: translateY(5px);
+        }
+
+        .onList {
+            display: flex;
+        }
+
+        .offList {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="car-shop" onclick="carrinho()">&#128722;</button>
+
+
+    <div class="passagens">
+        <button class="place1"></button>
+        <button class="comprar1" id="botao1" onclick="mostrarselecao()">comprar</button>
+        <span class="custom-emoji">&#9992;</span>
+
+    </div>
+
+    <div class="hotel">
+        <button class="place2"></button>
+        <button class="comprar2" id="botao2" onclick="mostrarSelecao1()">comprar</button>
+        <span class="hotel1">🏨</span>
+    </div>
+
+    <div class="selecao1">
+        <button class="selection"></button>
+        <button class="Selecione" id="mostrarLista">Selecione</button>
+        <button class="chosee">Escolha o Destino!</button>
+        <i class="fa-solid fa-location-dot"></i>
+        <button class="comprarPassagem" id="comprarPassagem" onclick="comprarPassagem()">Comprar</button>
+        <select class="listaPassagem" id="ListaPassagem" style="display: none;">
+            <option value="opcao1">Rio de Janeiro</option>
+            <option value="opcao2">Brasília</option>
+            <option value="opcao3">Rio Grande do Sul</option>
+        </select>
+        
+    </div>
+
+    <div class="selecao2" id="kkk">
+        <button class="selection"></button>
+        <button class="Selecione2" id="mostrarListaHotel" onclick="mostrarListaHotel()">Selecione</button>
+        <button class="chosee1">Escolha o Hotel!</button>
+        <button class="comprarHotel" id="comprarHotel" onclick="comprarHotel1()">Comprar</button>
+        <select class="ListaHotel" id="ListaHotel" style="display: none;">
+            <option value="opcao4">Crystal Palace</option>
+            <option value="opcao5">Marina Park</option>
+            <option value="opcao6">Copa Cabana Palace</option>
+        </select>
+    </div>
+
+    <div class="carrinho" id="carrinho">
+        <button class="placeCarrinho"></button>
+        <button class="okay" onclick="exitcar()">OK!</button>
+        <button class="carrinhoList"></button>
+    </div>
+
+    <script>
+        function mostrarSelecao1() {
+        var mostrar1 = document.querySelector('.selecao2');
+        mostrar1.classList.add('onList')
+        mostrar1.classList.remove('selecao2')
+    }
+
+    function comprarHotel1() {
+    var fechar = document.querySelector('.onList'); // Selecionar o elemento correto
+    if (fechar) { 
+        fechar.remove()
+        fechar.add()
+
+        var novaDiv = document.createElement('div');
+    
+    }
+
+    var select = document.getElementById('ListaHotel');
+    var opcao = select.options[select.selectedIndex].text;
+    document.querySelector(".carrinhoList").innerText = opcao;
+}
+
+
+    function carrinho() {
+        var mostrar3 = document.querySelector('.carrinho');
+        if (mostrar3.style.display === "none") {
+            mostrar3.style.display = "block";
+        } else {
+            mostrar3.style.display = "none";
+        }
+    }
+
+    function exitcar() {
+        var mostrar4 = document.querySelector('.carrinho');
+        if (mostrar4.style.display === "block") {
+            mostrar4.style.display = "none";
+        }
+    }
+
+    function mostrarselecao() {
+        var mostrar = document.querySelector('.selecao1'); 
+        mostrar.classList.add('onselecao'); 
+        mostrar.classList.remove('selecao1');
+    }
+
+    function mostrarListaHotel() {
+    var listaHotel = document.getElementById("ListaHotel");
+    if (listaHotel.style.display === "none") {
+        listaHotel.style.display = "block";
+    } else {
+        listaHotel.style.display = "none";
+    }
+}
+
+
+
+    function comprarPassagem() {
+        var fechar = document.querySelector('.onselecao')
+        fechar.classList.add('selecao1');
+        fechar.classList.remove('onselecao');
+        var select = document.getElementById('ListaPassagem'); // Corrigido o ID para ListaPassagem
+var opcao = select.options[select.selectedIndex].text; // Alterado para pegar o texto da opção selecionada
+document.querySelector(".carrinhoList").innerText = opcao; // Alterado para selecionar a classe correta
+
+    }
+
+    function comprarHotel() {
+        var fechar = document.querySelector('.onselecao');
+        if (fechar.style.display === "flex") {
+            fechar.style.display = "none"
+        }
+    }
+
+    var botaoMostrar = document.getElementById("mostrarLista");
+    var lista = document.getElementById("ListaPassagem");
+
+    botaoMostrar.addEventListener("click", function() {
+        if (lista.style.display === "none") {
+            lista.style.display = "block";
+        } else {
+            lista.style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>
